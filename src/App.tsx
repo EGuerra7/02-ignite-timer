@@ -3,9 +3,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { defaultTheme } from './styles/themes/defaut'
 import { GlobalStyle } from './styles/global'
 import { Router } from './Router'
-import { createContext } from 'react'
+import { CycleContextProvider } from './contexts/CyclesContext'
 
-export const CyclesContext = createContext({} as CyclesContextType)
 
 function App() {
 
@@ -13,8 +12,9 @@ function App() {
     <ThemeProvider theme={defaultTheme}>
       
         <BrowserRouter>
-
+          <CycleContextProvider>
             <Router />
+          </CycleContextProvider>
         </BrowserRouter>
 
 
